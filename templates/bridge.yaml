@@ -140,7 +140,11 @@ Resources:
       LoginProfile:
         Password: !Ref InitNewUserPassword
         PasswordResetRequired: true
-       
+  AWSIAMS3DocPutUser:
+    Type: 'AWS::IAM::User'
+    Properties:
+      Policies:
+        - !Ref AWSS3PutDocumentPolicy
   AWSIAMDeveloperUsersGroup:
     Type: 'AWS::IAM::Group'
     Properties:
